@@ -89,7 +89,7 @@ export const StockSearch = () => {
                 <div className="text-sm text-muted-foreground">{stock.name}</div>
               </div>
               <div className="text-right">
-                <div className="font-semibold text-foreground">${stock.currentPrice}</div>
+                <div className="font-semibold text-foreground">₹{stock.currentPrice.toFixed(2)}</div>
                 <div
                   className={`text-sm font-medium ${
                     stock.change >= 0 ? "text-success" : "text-danger"

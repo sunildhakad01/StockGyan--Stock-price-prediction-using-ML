@@ -36,7 +36,7 @@ export const PriceChart = ({ data, showVolume = false }: PriceChartProps) => {
           <YAxis
             stroke="hsl(var(--muted-foreground))"
             domain={["dataMin - 5", "dataMax + 5"]}
-            tickFormatter={(value) => `$${value.toFixed(0)}`}
+            tickFormatter={(value) => `₹${value.toFixed(0)}`}
           />
           <Tooltip
             contentStyle={{
@@ -45,7 +45,7 @@ export const PriceChart = ({ data, showVolume = false }: PriceChartProps) => {
               borderRadius: "8px",
             }}
             labelFormatter={(value) => new Date(value).toLocaleDateString()}
-            formatter={(value: number) => [`$${value.toFixed(2)}`, "Close"]}
+            formatter={(value: number) => [`₹${value.toFixed(2)}`, "Close"]}
           />
           <Area
             type="monotone"

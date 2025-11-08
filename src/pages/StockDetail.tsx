@@ -91,7 +91,7 @@ const StockDetail = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div>
               <p className="text-sm text-muted-foreground mb-1">Current Price</p>
-              <p className="text-3xl font-bold text-foreground">${stock.currentPrice.toFixed(2)}</p>
+              <p className="text-3xl font-bold text-foreground">₹{stock.currentPrice.toFixed(2)}</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground mb-1">Change</p>
@@ -109,7 +109,7 @@ const StockDetail = () => {
             </div>
             <div>
               <p className="text-sm text-muted-foreground mb-1">Market Cap</p>
-              <p className="text-2xl font-bold text-foreground">${stock.marketCap}</p>
+              <p className="text-2xl font-bold text-foreground">₹{stock.marketCap}</p>
             </div>
           </div>
         </Card>
@@ -165,19 +165,19 @@ const StockDetail = () => {
                       <div>
                         <p className="text-xs text-muted-foreground">Predicted Price</p>
                         <p className="text-2xl font-bold text-primary">
-                          ${predictionData[predictionData.length - 1].predicted.toFixed(2)}
+                          ₹{predictionData[predictionData.length - 1].predicted.toFixed(2)}
                         </p>
                       </div>
                       <div>
                         <p className="text-xs text-muted-foreground">Lower Bound</p>
                         <p className="text-xl font-semibold text-foreground">
-                          ${predictionData[predictionData.length - 1].confidenceLow.toFixed(2)}
+                          ₹{predictionData[predictionData.length - 1].confidenceLow.toFixed(2)}
                         </p>
                       </div>
                       <div>
                         <p className="text-xs text-muted-foreground">Upper Bound</p>
                         <p className="text-xl font-semibold text-foreground">
-                          ${predictionData[predictionData.length - 1].confidenceHigh.toFixed(2)}
+                          ₹{predictionData[predictionData.length - 1].confidenceHigh.toFixed(2)}
                         </p>
                       </div>
                     </div>

@@ -45,9 +45,9 @@ const Index = () => {
       {/* Stock Grid */}
       <div className="container mx-auto px-4 py-12">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold text-foreground mb-2">Popular Stocks</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-2">Indian Stock Market</h2>
           <p className="text-muted-foreground">
-            Explore and analyze 20 top-performing stocks with AI-powered predictions
+            Explore and analyze 20 top NSE stocks with AI-powered predictions
           </p>
         </div>
 

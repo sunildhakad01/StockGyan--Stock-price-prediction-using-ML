@@ -32,7 +32,7 @@ export const StockCard = ({ stock }: StockCardProps) => {
 
       <div className="space-y-3">
         <div>
-          <div className="text-3xl font-bold text-foreground">${stock.currentPrice.toFixed(2)}</div>
+          <div className="text-3xl font-bold text-foreground">₹{stock.currentPrice.toFixed(2)}</div>
           <div className="flex items-center gap-2 mt-1">
             <span
               className={`text-sm font-semibold ${
@@ -53,7 +53,7 @@ export const StockCard = ({ stock }: StockCardProps) => {
           </div>
           <div className="flex justify-between text-sm mt-2">
             <span className="text-muted-foreground">Market Cap</span>
-            <span className="font-medium text-foreground">${stock.marketCap}</span>
+            <span className="font-medium text-foreground">₹{stock.marketCap}</span>
           </div>
         </div>
       </div>

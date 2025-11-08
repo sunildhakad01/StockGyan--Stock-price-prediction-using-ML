@@ -12,24 +12,24 @@ export const PredictionChart = ({ data }: PredictionChartProps) => {
         <AreaChart data={data}>
           <defs>
             <linearGradient id="colorPrediction" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.3} />
-              <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0} />
+              <stop offset="5%" stopColor="hsl(210 100% 40%)" stopOpacity={0.5} />
+              <stop offset="95%" stopColor="hsl(210 100% 40%)" stopOpacity={0.1} />
             </linearGradient>
             <linearGradient id="colorConfidence" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="hsl(var(--secondary))" stopOpacity={0.2} />
-              <stop offset="95%" stopColor="hsl(var(--secondary))" stopOpacity={0.05} />
+              <stop offset="5%" stopColor="hsl(195 80% 45%)" stopOpacity={0.4} />
+              <stop offset="95%" stopColor="hsl(195 80% 45%)" stopOpacity={0.1} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+          <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
           <XAxis
             dataKey="date"
-            stroke="hsl(var(--muted-foreground))"
+            stroke="hsl(var(--foreground))"
             tickFormatter={(value) => new Date(value).toLocaleDateString("en-US", { month: "short", day: "numeric" })}
           />
           <YAxis
-            stroke="hsl(var(--muted-foreground))"
+            stroke="hsl(var(--foreground))"
             domain={["dataMin - 5", "dataMax + 5"]}
-            tickFormatter={(value) => `$${value.toFixed(0)}`}
+            tickFormatter={(value) => `₹${value.toFixed(0)}`}
           />
           <Tooltip
             contentStyle={{
@@ -44,27 +44,29 @@ export const PredictionChart = ({ data }: PredictionChartProps) => {
                 confidenceLow: "Lower Bound",
                 confidenceHigh: "Upper Bound",
               };
-              return [`$${value.toFixed(2)}`, labels[name] || name];
+              return [`₹${value.toFixed(2)}`, labels[name] || name];
             }}
           />
           <Area
             type="monotone"
             dataKey="confidenceHigh"
-            stroke="none"
+            stroke="hsl(195 80% 45%)"
+            strokeWidth={2}
             fill="url(#colorConfidence)"
           />
           <Area
             type="monotone"
             dataKey="confidenceLow"
-            stroke="none"
+            stroke="hsl(195 80% 45%)"
+            strokeWidth={2}
             fill="url(#colorConfidence)"
           />
           <Line
             type="monotone"
             dataKey="predicted"
-            stroke="hsl(var(--primary))"
-            strokeWidth={3}
-            dot={false}
+            stroke="hsl(210 100% 40%)"
+            strokeWidth={4}
+            dot={{ fill: "hsl(210 100% 40%)", r: 4 }}
           />
         </AreaChart>
       </ResponsiveContainer>
