@@ -1,44 +1,47 @@
+# StockGyan — AI-Powered Stock Prediction & Analysis
 
+StockGyan is a React + Vite + TypeScript application that provides interactive stock price analysis and AI-powered predictions for popular stocks.
 
-## Project info
+## Features
+- Real-time price charts and live ticker
+- Multi-horizon prediction visualizations
+- Fast, responsive UI built with Tailwind CSS and shadcn-ui
+- Client-side routing with React Router
 
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. 
+Prerequisites:
+- Node.js (LTS recommended) and npm
 
-The only requirement is having Node.js & npm installed 
-Follow these steps:
+Install and run the app locally:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Install dependencies
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview built app
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-
-## What technologies are used for this project?
-
-This project is built with:
-
+## Tech Stack
 - Vite
+- React 18
 - TypeScript
-- React
-- shadcn-ui
 - Tailwind CSS
+- shadcn-ui
 
+## Project Structure
+- `src/pages` — Route pages like `Index`, `StockDetail`, `NotFound`
+- `src/components` — UI components (`PriceChart`, `PredictionChart`, `LiveTicker`, etc.)
+- `src/data/stocks.ts` — Static stock dataset
+- `src/main.tsx` — App bootstrap
+- `tailwind.config.ts` — Tailwind configuration
 
-
-
+## License
+Proprietary. All rights reserved.
